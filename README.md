@@ -15,18 +15,16 @@
 
 ## � The Process
 
-```
-1. Load Dataset           2. Balance Data           3. Apply 5 Sampling
-   ↓                        ↓                         Techniques
-   Imbalanced           Oversample Fraud              ↓
-   (99.8% Normal)       (50-50 Split)            4. Train 5 Models
-                                                     on Each Sample
-                                                     ↓
-6. Conclusion        5. Analyze Results        
-   ↓                      ↓
-Sampling1 BEST!    Results Table + Graph
-(for 4/5 models)    Accuracy Comparison
-```
+**Step 1** → **Step 2** → **Step 3** → **Step 4** → **Step 5** → **Step 6**
+
+| Step | Action | Details |
+|------|--------|---------|
+| 1️⃣ | Load Dataset | Import credit card data (imbalanced: 99.8% normal, 0.2% fraud) |
+| 2️⃣ | Balance Data | Oversample fraud cases until 50-50 split |
+| 3️⃣ | Apply 5 Sampling | Simple Random, Stratified, Bootstrap, K-Fold, Stratified K-Fold |
+| 4️⃣ | Train 5 Models | LogReg, KNN, Decision Tree, Random Forest, SVM |
+| 5️⃣ | Analyze Results | Create accuracy table and visualization |
+| 6️⃣ | Conclusion | Find best sampling technique for each model |
 
 ---
 
