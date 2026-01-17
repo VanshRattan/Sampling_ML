@@ -16,18 +16,7 @@ The main goal is to:
 
 ---
 
-## 📂 Dataset Information
-
-- **Dataset Name:** Creditcard_data.csv  
-- **Source:**  
-  https://github.com/AnjulaMehto/Sampling_Assignment/blob/main/Creditcard_data.csv  
-- **Target Column:** `Class`  
-  - `0` → Normal Transaction  
-  - `1` → Fraud Transaction  
-
-The dataset is **highly imbalanced**, with fraud cases being very rare compared to normal transactions.
-
----
+![alt text](image.png)
 
 ## ⚖️ Step 1: Data Balancing
 
@@ -120,5 +109,5 @@ and the choice of sampling method should depend on the model and data characteri
 
 ---
 
-## 📁 Repository Structure
+
 
