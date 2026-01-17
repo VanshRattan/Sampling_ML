@@ -3,77 +3,56 @@
 
 ---
 
-## 📌 Project Overview
+## 📌 Overview
 
-This project analyzes how different **sampling techniques** affect the performance of
-various **machine learning models** on a **highly imbalanced credit card fraud dataset**.
+This project evaluates how different **sampling techniques** affect the performance of
+multiple **machine learning models** on an **imbalanced credit card fraud dataset**.
 
-The main goal is to:
-- Handle class imbalance correctly
-- Apply multiple sampling techniques
-- Train multiple ML models
-- Compare results and identify the best sampling method
+**Goals:**
+- Handle class imbalance
+- Apply different sampling techniques
+- Compare model performance
+- Identify the best sampling method
 
 ---
+
+## 🔁 Workflow
+
 
 ![alt text](image.png)
 
-## ⚖️ Step 1: Data Balancing
+---
 
-Since the dataset is imbalanced, the minority class (fraud cases) was **oversampled**.
+## ⚖️ Data Balancing
 
-### What was done:
-- Fraud records were randomly duplicated **with replacement**
-- Oversampling continued until both classes had equal samples
-- The dataset was shuffled to remove ordering bias
-
-This step ensures fair learning for both classes.
+The dataset was highly imbalanced.  
+The minority class (fraud cases) was **oversampled with replacement** until both classes were equal.
+The balanced dataset was shuffled to avoid bias.
 
 ---
 
-## 🔄 Step 2: Sampling Techniques Used
+## 🔄 Sampling Techniques
 
-After balancing the dataset, **five different sampling techniques** were applied:
-
-| Sampling Code | Sampling Technique | Description |
-|--------------|-------------------|-------------|
-| Sampling1 | Simple Random Sampling | Random train-test split |
-| Sampling2 | Stratified Sampling | Preserves class balance |
-| Sampling3 | Bootstrap Sampling | Sampling with replacement |
-| Sampling4 | K-Fold Sampling | Structured data splitting |
-| Sampling5 | Stratified K-Fold Sampling | K-Fold with class balance |
-
-Each sampling technique creates a different training and testing dataset.
+| Code | Technique |
+|-----|----------|
+| Sampling1 | Simple Random Sampling |
+| Sampling2 | Stratified Sampling |
+| Sampling3 | Bootstrap Sampling |
+| Sampling4 | K-Fold Sampling |
+| Sampling5 | Stratified K-Fold Sampling |
 
 ---
 
-## 🤖 Step 3: Machine Learning Models
+## 🤖 Machine Learning Models
 
-Five machine learning models were trained on each sampled dataset:
-
-| Model Code | Model Name |
-|-----------|------------|
-| M1 | Logistic Regression |
-| M2 | K-Nearest Neighbors (KNN) |
-| M3 | Decision Tree |
-| M4 | Random Forest |
-| M5 | Support Vector Machine (SVM) |
-
----
-
-## 📊 Step 4: Model Evaluation
-
-- Each model was trained on each sampled dataset
-- Performance was evaluated using **Accuracy**
-- Results were stored in a comparison table
-- A bar graph was plotted for visual comparison
+Logistic Regression, KNN, Decision Tree, Random Forest, and SVM were used for evaluation.
 
 ---
 
 ## 📈 Key Results
 
 | Model | Best Sampling | Accuracy |
-|-------|--------------|----------|
+|------|--------------|----------|
 | Logistic Regression | Sampling4 | 97.47% |
 | KNN | Sampling1 | 96.86% |
 | Decision Tree | Sampling1 | 97.94% |
@@ -84,30 +63,15 @@ Five machine learning models were trained on each sampled dataset:
 
 ## 🏆 Best Sampling Technique
 
-### ✅ Overall Best:
-**Sampling1 – Simple Random Sampling**
-
-- Performed best for **4 out of 5 models**
-- Works effectively once the dataset is balanced
-- Preserves the natural structure of the data
-
-### ⚠️ Exception:
-- **Logistic Regression** performed best with **Sampling4**
-- Logistic Regression prefers cleaner and more structured data splits
+- **Overall Best:** Sampling1 (Simple Random Sampling)  
+- **Exception:** Logistic Regression performs best with Sampling4  
 
 ---
 
-## 🧠 Final Conclusion
+## 🧠 Conclusion
 
-The experiment shows that balancing the dataset is crucial before applying any sampling technique.
-After balancing, **Simple Random Sampling** is sufficient and performs best for most machine learning
-models. However, some models, such as Logistic Regression, benefit from more structured sampling
-methods like K-Fold sampling.
-
-This demonstrates that **there is no single sampling technique that is best for all models**,
-and the choice of sampling method should depend on the model and data characteristics.
+After balancing the dataset, **Simple Random Sampling** worked best for most models.
+Logistic Regression benefited from **K-Fold Sampling** due to its sensitivity to data splits.
+This shows that the best sampling technique depends on the model.
 
 ---
-
-
-
