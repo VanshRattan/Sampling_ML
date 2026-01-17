@@ -1,30 +1,83 @@
-# 📘 Sampling Assignment – Credit Card Fraud Detection
-**Student ID:** 102316118
+# 📘 Sampling Assignment – Credit Card Fraud Detection  
+**Student ID:** 102316118  
 
 ---
 
-## 🎯 Quick Overview (1-Minute Summary)
+## 📌 Project Overview
 
-**What:** Compare 5 sampling techniques across 5 ML models on a credit card fraud dataset.
+This project analyzes how different **sampling techniques** affect the performance of
+various **machine learning models** on a **highly imbalanced credit card fraud dataset**.
 
-**Why:** Dataset is imbalanced (fraud cases << normal cases). Need fair model training.
-
-**How:** Balance data → Apply 5 sampling techniques → Train 5 models → Compare results.
+The main goal is to:
+- Handle class imbalance correctly
+- Apply multiple sampling techniques
+- Train multiple ML models
+- Compare results and identify the best sampling method
 
 ---
 
-## � The Process
+## 📂 Dataset Information
 
-**Step 1** → **Step 2** → **Step 3** → **Step 4** → **Step 5** → **Step 6**
+- **Dataset Name:** Creditcard_data.csv  
+- **Source:**  
+  https://github.com/AnjulaMehto/Sampling_Assignment/blob/main/Creditcard_data.csv  
+- **Target Column:** `Class`  
+  - `0` → Normal Transaction  
+  - `1` → Fraud Transaction  
 
-| Step | Action | Details |
-|------|--------|---------|
-| 1️⃣ | Load Dataset | Import credit card data (imbalanced: 99.8% normal, 0.2% fraud) |
-| 2️⃣ | Balance Data | Oversample fraud cases until 50-50 split |
-| 3️⃣ | Apply 5 Sampling | Simple Random, Stratified, Bootstrap, K-Fold, Stratified K-Fold |
-| 4️⃣ | Train 5 Models | LogReg, KNN, Decision Tree, Random Forest, SVM |
-| 5️⃣ | Analyze Results | Create accuracy table and visualization |
-| 6️⃣ | Conclusion | Find best sampling technique for each model |
+The dataset is **highly imbalanced**, with fraud cases being very rare compared to normal transactions.
+
+---
+
+## ⚖️ Step 1: Data Balancing
+
+Since the dataset is imbalanced, the minority class (fraud cases) was **oversampled**.
+
+### What was done:
+- Fraud records were randomly duplicated **with replacement**
+- Oversampling continued until both classes had equal samples
+- The dataset was shuffled to remove ordering bias
+
+This step ensures fair learning for both classes.
+
+---
+
+## 🔄 Step 2: Sampling Techniques Used
+
+After balancing the dataset, **five different sampling techniques** were applied:
+
+| Sampling Code | Sampling Technique | Description |
+|--------------|-------------------|-------------|
+| Sampling1 | Simple Random Sampling | Random train-test split |
+| Sampling2 | Stratified Sampling | Preserves class balance |
+| Sampling3 | Bootstrap Sampling | Sampling with replacement |
+| Sampling4 | K-Fold Sampling | Structured data splitting |
+| Sampling5 | Stratified K-Fold Sampling | K-Fold with class balance |
+
+Each sampling technique creates a different training and testing dataset.
+
+---
+
+## 🤖 Step 3: Machine Learning Models
+
+Five machine learning models were trained on each sampled dataset:
+
+| Model Code | Model Name |
+|-----------|------------|
+| M1 | Logistic Regression |
+| M2 | K-Nearest Neighbors (KNN) |
+| M3 | Decision Tree |
+| M4 | Random Forest |
+| M5 | Support Vector Machine (SVM) |
+
+---
+
+## 📊 Step 4: Model Evaluation
+
+- Each model was trained on each sampled dataset
+- Performance was evaluated using **Accuracy**
+- Results were stored in a comparison table
+- A bar graph was plotted for visual comparison
 
 ---
 
@@ -32,54 +85,40 @@
 
 | Model | Best Sampling | Accuracy |
 |-------|--------------|----------|
-| **Logistic Regression** | Sampling4 | 97.47% |
-| **KNN** | Sampling1 | 96.86% |
-| **Decision Tree** | Sampling1 | 97.94% |
-| **Random Forest** | Sampling1 | 97.65% |
-| **SVM** | Sampling1 | 96.55% |
-
-**Winner:** Sampling1 (Simple Random) works best for 4/5 models! ⭐
+| Logistic Regression | Sampling4 | 97.47% |
+| KNN | Sampling1 | 96.86% |
+| Decision Tree | Sampling1 | 97.94% |
+| Random Forest | Sampling1 | 97.65% |
+| SVM | Sampling1 | 96.55% |
 
 ---
 
-## 🔄 5 Sampling Techniques Explained
+## 🏆 Best Sampling Technique
 
-| # | Technique | How It Works | Best For |
-|---|-----------|-------------|----------|
-| **1** | Simple Random | Random 75-25 split | Non-linear models, trees |
-| **2** | Stratified | Split while keeping 50-50 ratio | Maintaining balance |
-| **3** | Bootstrap | Sample with replacement | Reducing variance |
-| **4** | K-Fold | Divide into 5 folds | Logistic Regression |
-| **5** | Stratified K-Fold | K-Fold + balanced splits | Robust validation |
+### ✅ Overall Best:
+**Sampling1 – Simple Random Sampling**
 
----
+- Performed best for **4 out of 5 models**
+- Works effectively once the dataset is balanced
+- Preserves the natural structure of the data
 
-## 💡 Why Sampling1 Wins
-
-✅ Data already balanced → No need for complex techniques  
-✅ Simple = Fewer errors & faster  
-✅ Works great with decision trees & random forests  
-✅ Preserves natural data structure  
-
-**Exception:** Logistic Regression prefers Sampling4 (K-Fold) for stable decision boundaries.
+### ⚠️ Exception:
+- **Logistic Regression** performed best with **Sampling4**
+- Logistic Regression prefers cleaner and more structured data splits
 
 ---
 
-## 📁 Files
+## 🧠 Final Conclusion
 
-- `102316118.ipynb` – All code & experiments
-- `Creditcard_data.csv` – Dataset
-- `README.md` – This guide
+The experiment shows that balancing the dataset is crucial before applying any sampling technique.
+After balancing, **Simple Random Sampling** is sufficient and performs best for most machine learning
+models. However, some models, such as Logistic Regression, benefit from more structured sampling
+methods like K-Fold sampling.
+
+This demonstrates that **there is no single sampling technique that is best for all models**,
+and the choice of sampling method should depend on the model and data characteristics.
 
 ---
 
-## ✅ What We Learned
+## 📁 Repository Structure
 
-1. **Balance first** – Imbalanced data = biased models
-2. **Simple > Complex** – When data is balanced, don't overcomplicate
-3. **Model matters** – Linear vs non-linear models prefer different techniques
-4. **No one-size-fits-all** – Test & choose based on your data & model type
-
-**Final Takeaway:** For balanced datasets, use **Simple Random Sampling (Sampling1)** for best results with most ML models!
-
---  
