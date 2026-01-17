@@ -3,7 +3,7 @@
 
 ---
 
-##  Overview
+## 📌 Overview
 
 This project studies how different **sampling techniques** impact the performance of
 machine learning models on a **highly imbalanced credit card fraud dataset**.
@@ -13,13 +13,13 @@ and compare model performance to identify the most effective approach.
 
 ---
 
-##  Workflow
+## 🔁 Workflow
 
 ![alt text](image.png)
 
 ---
 
-##  Data Balancing
+## ⚖️ Data Balancing
 
 The dataset was originally imbalanced, with very few fraud cases.
 To address this, the minority class was **oversampled with replacement** until both
@@ -28,7 +28,7 @@ from both normal and fraudulent transactions fairly.
 
 ---
 
-##  Sampling Techniques
+## 🔄 Sampling Techniques
 
 | Code | Technique |
 |-----|----------|
@@ -40,14 +40,14 @@ from both normal and fraudulent transactions fairly.
 
 ---
 
-##  Machine Learning Models
+## 🤖 Machine Learning Models
 
 Logistic Regression, KNN, Decision Tree, Random Forest, and SVM were used to evaluate
 the effect of different sampling strategies.
 
 ---
 
-##  Key Results
+## 📈 Key Results
 
 | Model | Best Sampling | Accuracy |
 |------|--------------|----------|
@@ -59,14 +59,14 @@ the effect of different sampling strategies.
 
 ---
 
-##  Best Sampling Technique
+## 🏆 Best Sampling Technique
 
 - **Sampling1 (Simple Random Sampling)** performed best for most models.  
 - **Sampling4 (K-Fold Sampling)** worked best for Logistic Regression.
 
 ---
 
-##  Conclusion
+## 🧠 Conclusion
 
 This experiment shows that handling data imbalance is the most important step before
 applying any sampling technique. Once the data is balanced, simple approaches like
