@@ -5,19 +5,15 @@
 
 ## 📌 Overview
 
-This project evaluates how different **sampling techniques** affect the performance of
-multiple **machine learning models** on an **imbalanced credit card fraud dataset**.
+This project studies how different **sampling techniques** impact the performance of
+machine learning models on a **highly imbalanced credit card fraud dataset**.
 
-**Goals:**
-- Handle class imbalance
-- Apply different sampling techniques
-- Compare model performance
-- Identify the best sampling method
+The main objectives are to handle class imbalance, apply multiple sampling techniques,
+and compare model performance to identify the most effective approach.
 
 ---
 
 ## 🔁 Workflow
-
 
 ![alt text](image.png)
 
@@ -25,9 +21,10 @@ multiple **machine learning models** on an **imbalanced credit card fraud datase
 
 ## ⚖️ Data Balancing
 
-The dataset was highly imbalanced.  
-The minority class (fraud cases) was **oversampled with replacement** until both classes were equal.
-The balanced dataset was shuffled to avoid bias.
+The dataset was originally imbalanced, with very few fraud cases.
+To address this, the minority class was **oversampled with replacement** until both
+classes had equal representation. This step helps ensure that models learn patterns
+from both normal and fraudulent transactions fairly.
 
 ---
 
@@ -45,7 +42,8 @@ The balanced dataset was shuffled to avoid bias.
 
 ## 🤖 Machine Learning Models
 
-Logistic Regression, KNN, Decision Tree, Random Forest, and SVM were used for evaluation.
+Logistic Regression, KNN, Decision Tree, Random Forest, and SVM were used to evaluate
+the effect of different sampling strategies.
 
 ---
 
@@ -63,15 +61,22 @@ Logistic Regression, KNN, Decision Tree, Random Forest, and SVM were used for ev
 
 ## 🏆 Best Sampling Technique
 
-- **Overall Best:** Sampling1 (Simple Random Sampling)  
-- **Exception:** Logistic Regression performs best with Sampling4  
+- **Sampling1 (Simple Random Sampling)** performed best for most models.  
+- **Sampling4 (K-Fold Sampling)** worked best for Logistic Regression.
 
 ---
 
 ## 🧠 Conclusion
 
-After balancing the dataset, **Simple Random Sampling** worked best for most models.
-Logistic Regression benefited from **K-Fold Sampling** due to its sensitivity to data splits.
-This shows that the best sampling technique depends on the model.
+This experiment shows that handling data imbalance is the most important step before
+applying any sampling technique. Once the data is balanced, simple approaches like
+**Simple Random Sampling** can perform just as well, or even better, than more complex
+methods for many machine learning models.
+
+However, not all models behave the same way. Logistic Regression, which is a linear
+model, benefited from a more structured sampling approach such as **K-Fold Sampling**.
+This highlights an important lesson: the choice of sampling technique should depend on
+both the dataset and the type of model being used, rather than relying on a single
+method for all cases.
 
 ---
